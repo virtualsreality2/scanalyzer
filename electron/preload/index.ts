@@ -96,6 +96,22 @@ const storageAPI = {
   clear: () => ipcRenderer.invoke('storage:clear'),
 };
 
+// Test API (only in test/development mode)
+const testAPI = process.env.NODE_ENV === 'test' || process.env.SPECTRON === 'true' ? {
+  shutdown: () => ipcRenderer.invoke('test:shutdown'),
+  getDeepLinkData: () => ipcRenderer.invoke('test:get-deep-link-data'),
+  isCrashReporterEnabled: () => ipcRenderer.invoke('test:is-crash-reporter-enabled'),
+  getDisplays: () => ipcRenderer.invoke('test:get-displays'),
+  toggleDevTools: () => ipcRenderer.invoke('test:toggle-dev-tools'),
+  getBackendStatus: () => ipcRenderer.invoke('test:get-backend-status'),
+  crashBackend: () => ipcRenderer.invoke('test:crash-backend'),
+  checkBackendHealth: () => ipcRenderer.invoke('test:check-backend-health'),
+  getApplicationMenu: () => ipcRenderer.invoke('test:get-application-menu'),
+  hasNativeTrafficLights: () => ipcRenderer.invoke('test:has-native-traffic-lights'),
+  getVibrancyEffect: () => ipcRenderer.invoke('test:get-vibrancy-effect'),
+  hasCustomFrame: () => ipcRenderer.invoke('test:has-custom-frame'),
+} : undefined;
+
 // Expose APIs to renderer
 contextBridge.exposeInMainWorld('electronAPI', {
   window: windowAPI,
@@ -104,6 +120,7 @@ contextBridge.exposeInMainWorld('electronAPI', {
   backend: backendAPI,
   app: appAPI,
   storage: storageAPI,
+  ...(testAPI && { test: testAPI }),
 });
 
 // Type definitions for TypeScript
