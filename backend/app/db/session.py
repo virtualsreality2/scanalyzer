@@ -111,3 +111,7 @@ class DatabaseTransactionManager:
         except Exception:
             await self.rollback_to_savepoint(savepoint)
             raise
+
+
+# Alias for cleanup service compatibility
+get_db_context = get_db_session

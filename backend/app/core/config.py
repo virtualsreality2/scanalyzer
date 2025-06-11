@@ -104,6 +104,13 @@ class Settings(BaseSettings):
         logs_dir.mkdir(parents=True, exist_ok=True)
         return logs_dir
     
+    @property
+    def UPLOADS_DIR(self) -> Path:
+        """Uploads directory for file storage."""
+        uploads_dir = self.STORAGE_DIR / "uploads"
+        uploads_dir.mkdir(parents=True, exist_ok=True)
+        return uploads_dir
+    
     # Database
     DATABASE_NAME: str = Field(default="scanalyzer.db", env="DATABASE_NAME")
     DATABASE_ENCRYPTION_KEY: Optional[SecretStr] = Field(default=None, env="DATABASE_ENCRYPTION_KEY")

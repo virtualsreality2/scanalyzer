@@ -181,6 +181,11 @@ class FileTypeException(ValidationException):
         )
 
 
+class ParseError(ProcessingException):
+    """Exception raised when parsing a file fails."""
+    pass
+
+
 class MemoryLimitException(ProcessingException):
     """Exception raised when memory limit is exceeded."""
     
