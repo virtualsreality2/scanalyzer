@@ -1,0 +1,159 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
+.pytest_cache/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.coverage
+htmlcov/
+.tox/
+.nox/
+*.cover
+*.log
+.git
+.hypothesis/
+poetry.lock
+
+# Backend storage
+backend/storage/database/*
+!backend/storage/database/.gitkeep
+backend/storage/reports/*
+!backend/storage/reports/.gitkeep
+backend/storage/temp/*
+!backend/storage/temp/.gitkeep
+
+# Build outputs
+dist/
+build/
+*.egg-info/
+.eggs/
+out/
+release/
+
+# Electron
+electron/resources/certificates/*
+!electron/resources/certificates/.gitkeep
+
+# IDE
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.swp
+*.swo
+*~
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Testing
+coverage/
+.nyc_output/
+test-results/
+playwright-report/
+playwright/.cache/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+.parcel-cache/
+.turbo/
+
+# Production
+*.production
+
+# Misc
+.sass-cache/
+.grunt/
+.npm/
+.eslintcache
+.stylelintcache
+.yarn-integrity
+
+# Security
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Lock files (except package-lock.json)
+yarn.lock
+pnpm-lock.yaml
+
+# Python package management
+poetry.lock
+Pipfile.lock
+
+# macOS code signing
+*.provisionprofile
+
+# Windows code signing
+*.pvk
+*.spc
+*.cer
+
+# Electron-builder
+electron-builder.yml
+!electron-builder.config.js

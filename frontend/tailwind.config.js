@@ -1,0 +1,120 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        // Map CSS variables to Tailwind utilities
+        background: {
+          primary: 'var(--color-background-primary)',
+          secondary: 'var(--color-background-secondary)',
+          tertiary: 'var(--color-background-tertiary)',
+          inverse: 'var(--color-background-inverse)',
+          overlay: 'var(--color-background-overlay)',
+        },
+        surface: {
+          primary: 'var(--color-surface-primary)',
+          secondary: 'var(--color-surface-secondary)',
+          tertiary: 'var(--color-surface-tertiary)',
+          elevated: 'var(--color-surface-elevated)',
+        },
+        text: {
+          primary: 'var(--color-text-primary)',
+          secondary: 'var(--color-text-secondary)',
+          tertiary: 'var(--color-text-tertiary)',
+          disabled: 'var(--color-text-disabled)',
+          inverse: 'var(--color-text-inverse)',
+          link: 'var(--color-text-link)',
+          linkHover: 'var(--color-text-linkHover)',
+        },
+        border: {
+          primary: 'var(--color-border-primary)',
+          secondary: 'var(--color-border-secondary)',
+          tertiary: 'var(--color-border-tertiary)',
+          focus: 'var(--color-border-focus)',
+          error: 'var(--color-border-error)',
+        },
+        interactive: {
+          primary: 'var(--color-interactive-primary)',
+          primaryHover: 'var(--color-interactive-primaryHover)',
+          primaryActive: 'var(--color-interactive-primaryActive)',
+          secondary: 'var(--color-interactive-secondary)',
+          secondaryHover: 'var(--color-interactive-secondaryHover)',
+          secondaryActive: 'var(--color-interactive-secondaryActive)',
+        },
+        semantic: {
+          success: 'var(--color-semantic-success)',
+          successLight: 'var(--color-semantic-successLight)',
+          warning: 'var(--color-semantic-warning)',
+          warningLight: 'var(--color-semantic-warningLight)',
+          error: 'var(--color-semantic-error)',
+          errorLight: 'var(--color-semantic-errorLight)',
+          info: 'var(--color-semantic-info)',
+          infoLight: 'var(--color-semantic-infoLight)',
+        },
+        severity: {
+          critical: {
+            background: 'var(--color-severity-critical-background)',
+            border: 'var(--color-severity-critical-border)',
+            text: 'var(--color-severity-critical-text)',
+            icon: 'var(--color-severity-critical-icon)',
+          },
+          high: {
+            background: 'var(--color-severity-high-background)',
+            border: 'var(--color-severity-high-border)',
+            text: 'var(--color-severity-high-text)',
+            icon: 'var(--color-severity-high-icon)',
+          },
+          medium: {
+            background: 'var(--color-severity-medium-background)',
+            border: 'var(--color-severity-medium-border)',
+            text: 'var(--color-severity-medium-text)',
+            icon: 'var(--color-severity-medium-icon)',
+          },
+          low: {
+            background: 'var(--color-severity-low-background)',
+            border: 'var(--color-severity-low-border)',
+            text: 'var(--color-severity-low-text)',
+            icon: 'var(--color-severity-low-icon)',
+          },
+          info: {
+            background: 'var(--color-severity-info-background)',
+            border: 'var(--color-severity-info-border)',
+            text: 'var(--color-severity-info-text)',
+            icon: 'var(--color-severity-info-icon)',
+          },
+        },
+        brand: {
+          50: 'var(--color-brand-50)',
+          100: 'var(--color-brand-100)',
+          200: 'var(--color-brand-200)',
+          300: 'var(--color-brand-300)',
+          400: 'var(--color-brand-400)',
+          500: 'var(--color-brand-500)',
+          600: 'var(--color-brand-600)',
+          700: 'var(--color-brand-700)',
+          800: 'var(--color-brand-800)',
+          900: 'var(--color-brand-900)',
+        },
+      },
+      fontFamily: {
+        sans: 'var(--font-family-primary)',
+        mono: 'var(--font-family-mono)',
+      },
+      fontSize: {
+        xs: 'var(--font-size-xs)',
+        sm: 'var(--font-size-sm)',
+        base: 'var(--font-size-base)',
+        lg: 'var(--font-size-lg)',
+        xl: 'var(--font-size-xl)',
+        '2xl': 'var(--font-size-2xl)',
+        '3xl': 'var(--font-size-3xl)',
+        '4xl': 'var(--font-size-4xl)',
+      },
+    },
+  },
+  plugins: [],
+}

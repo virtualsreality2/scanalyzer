@@ -1,0 +1,114 @@
+.statusBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 22px;
+  padding: 0 12px;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  background-color: var(--color-surface-secondary);
+  border-top: 1px solid var(--color-border-primary);
+  user-select: none;
+}
+
+.statusSection {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.statusItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 8px;
+  border-radius: 3px;
+  transition: all 0.15s ease;
+}
+
+.statusItem:hover {
+  background-color: var(--color-surface-tertiary);
+}
+
+/* Connection Status */
+.statusItem.connected {
+  color: var(--color-semantic-success);
+}
+
+.statusItem.disconnected {
+  color: var(--color-semantic-error);
+}
+
+.latency {
+  font-size: 11px;
+  color: var(--color-text-tertiary);
+  margin-left: 4px;
+}
+
+/* Version */
+.version {
+  font-size: 11px;
+  color: var(--color-text-tertiary);
+  font-family: var(--font-family-mono);
+}
+
+/* Time */
+.time {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Platform-specific styles */
+:global(.windows) .statusBar {
+  background-color: var(--color-surface-primary);
+}
+
+:global(.macos) .statusBar {
+  height: 20px;
+  font-size: 11px;
+  padding: 0 10px;
+}
+
+/* Dark mode */
+:global(.dark) .statusBar {
+  background-color: var(--color-surface-tertiary);
+  border-top-color: var(--color-border-secondary);
+}
+
+/* Animations */
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.statusItem.loading {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Icons */
+.statusItem svg {
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .statusBar {
+    font-size: 11px;
+    padding: 0 8px;
+  }
+
+  .statusSection {
+    gap: 12px;
+  }
+
+  .latency,
+  .version {
+    display: none;
+  }
+}

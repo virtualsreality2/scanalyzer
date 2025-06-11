@@ -1,0 +1,143 @@
+.controls {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+/* Windows/Linux Styles */
+.windows {
+  gap: 1px;
+}
+
+.winButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 32px;
+  border: none;
+  background-color: transparent;
+  color: var(--color-text-secondary);
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.winButton:hover {
+  background-color: var(--color-surface-tertiary);
+  color: var(--color-text-primary);
+}
+
+.winButton.close:hover {
+  background-color: #e81123;
+  color: white;
+}
+
+.winButton:active {
+  background-color: var(--color-surface-secondary);
+}
+
+/* macOS Styles */
+.macos {
+  gap: 8px;
+  padding: 0 8px;
+}
+
+.macButton {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  -webkit-app-region: no-drag;
+}
+
+.macButton.close {
+  background-color: #ff5f57;
+  border: 0.5px solid #e0443e;
+}
+
+.macButton.minimize {
+  background-color: #ffbd2e;
+  border: 0.5px solid #dea123;
+}
+
+.macButton.maximize {
+  background-color: #27c93f;
+  border: 0.5px solid #1aab29;
+}
+
+/* macOS hover states */
+.macos:hover .macIcon {
+  opacity: 1;
+}
+
+.macIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  line-height: 1;
+}
+
+/* Inactive window state for macOS */
+.macos.inactive .macButton {
+  background-color: #ddd;
+  border-color: #ccc;
+}
+
+/* Dark mode adjustments */
+:global(.dark) .winButton {
+  color: var(--color-text-tertiary);
+}
+
+:global(.dark) .winButton:hover {
+  background-color: var(--color-surface-secondary);
+  color: var(--color-text-secondary);
+}
+
+:global(.dark) .winButton.close:hover {
+  background-color: #e81123;
+  color: white;
+}
+
+/* Platform-specific adjustments */
+:global(.linux) .winButton {
+  width: 36px;
+  height: 28px;
+  border-radius: 4px;
+}
+
+:global(.linux) .winButton:hover {
+  background-color: var(--color-interactive-secondary);
+}
+
+/* Fullscreen mode adjustments */
+:global(.fullscreen) .controls {
+  display: none;
+}
+
+/* Focus styles for accessibility */
+.winButton:focus-visible,
+.macButton:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: -2px;
+}
+
+/* Disabled state */
+.winButton:disabled,
+.macButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.winButton:disabled:hover,
+.macButton:disabled:hover {
+  background-color: transparent;
+}

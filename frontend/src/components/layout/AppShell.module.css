@@ -1,0 +1,128 @@
+.appShell {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--color-background-primary);
+}
+
+/* Title Bar */
+.titleBar {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  background-color: var(--color-surface-secondary);
+  border-bottom: 1px solid var(--color-border-primary);
+  flex-shrink: 0;
+  user-select: none;
+  -webkit-app-region: drag;
+}
+
+.titleBarContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 8px;
+}
+
+.appTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.appIcon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Platform-specific title bar */
+.windows .titleBar {
+  height: 32px;
+}
+
+.macos .titleBar {
+  height: 28px;
+  background-color: var(--color-surface-primary);
+}
+
+.macos .titleBarContent {
+  padding: 0 12px;
+}
+
+.macos .macTrafficLights {
+  width: 68px;
+  -webkit-app-region: no-drag;
+}
+
+.windowControls {
+  -webkit-app-region: no-drag;
+}
+
+/* Main Layout */
+.mainLayout {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.sidebar {
+  flex-shrink: 0;
+  border-right: 1px solid var(--color-border-primary);
+  transition: width 0.2s ease;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.contentInner {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Status Bar */
+.statusBar {
+  flex-shrink: 0;
+  height: 22px;
+  border-top: 1px solid var(--color-border-primary);
+  background-color: var(--color-surface-secondary);
+}
+
+/* Platform-specific adjustments */
+.windows .content {
+  background-color: var(--color-background-primary);
+}
+
+.macos .content {
+  background-color: var(--color-background-secondary);
+}
+
+/* Dark mode adjustments */
+:global(.dark) .titleBar {
+  background-color: var(--color-surface-tertiary);
+}
+
+:global(.dark) .macos .titleBar {
+  background-color: var(--color-surface-secondary);
+}
+
+/* Drag region helper */
+:global(.drag-region) {
+  -webkit-app-region: drag;
+}
+
+:global(.no-drag) {
+  -webkit-app-region: no-drag;
+}

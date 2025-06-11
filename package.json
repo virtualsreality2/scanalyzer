@@ -1,0 +1,126 @@
+{
+  "name": "scanalyzer",
+  "version": "1.0.0",
+  "description": "Intelligent Security Report Analysis for Your Desktop",
+  "main": "electron/main/index.js",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev:backend & npm run dev:frontend",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && source venv/bin/activate && python -m app.main",
+    "build": "npm run build:frontend && npm run build:electron",
+    "build:frontend": "cd frontend && npm run build",
+    "build:electron": "electron-builder",
+    "build:all": "npm run build:win && npm run build:mac",
+    "build:win": "electron-builder --win",
+    "build:mac": "electron-builder --mac",
+    "test": "npm run test:frontend && npm run test:backend",
+    "test:frontend": "cd frontend && npm test",
+    "test:backend": "cd backend && pytest",
+    "test:e2e": "cd frontend && npm run test:e2e",
+    "lint": "npm run lint:frontend && npm run lint:backend",
+    "lint:frontend": "cd frontend && npm run lint",
+    "lint:backend": "cd backend && flake8 && mypy app",
+    "clean": "rimraf dist build node_modules frontend/node_modules",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "keywords": [
+    "security",
+    "analysis",
+    "prowler",
+    "checkov",
+    "bandit",
+    "electron",
+    "desktop"
+  ],
+  "author": "Scanalyzer Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/scanalyzer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/scanalyzer/issues"
+  },
+  "homepage": "https://scanalyzer.io",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.3.3",
+    "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "electron-log": "^5.0.1",
+    "electron-updater": "^6.1.7",
+    "electron-store": "^8.1.0"
+  },
+  "build": {
+    "appId": "io.scanalyzer.app",
+    "productName": "Scanalyzer",
+    "directories": {
+      "output": "dist",
+      "buildResources": "electron/resources"
+    },
+    "files": [
+      "electron/**/*",
+      "frontend/dist/**/*",
+      "backend/**/*",
+      "!backend/storage/**/*",
+      "!backend/tests/**/*",
+      "!backend/.env",
+      "!backend/__pycache__",
+      "!backend/.pytest_cache",
+      "!backend/venv",
+      "!**/*.pyc"
+    ],
+    "mac": {
+      "category": "public.app-category.developer-tools",
+      "icon": "electron/resources/icons/icon.icns",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": ["x64", "arm64"]
+        }
+      ],
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
+      "entitlements": "electron/resources/entitlements.mac.plist",
+      "entitlementsInherit": "electron/resources/entitlements.mac.plist"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        }
+      ],
+      "icon": "electron/resources/icons/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    }
+  }
+}
