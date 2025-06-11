@@ -15,7 +15,7 @@ from sqlalchemy.ext.asyncio import (
 )
 from sqlalchemy.orm import declarative_base
 from sqlalchemy.pool import NullPool, QueuePool, StaticPool
-from sqlalchemy import event, inspect
+from sqlalchemy import event, inspect, text
 from sqlalchemy.engine import Engine
 
 from ..core.config import settings
@@ -107,7 +107,7 @@ async def init_db() -> None:
         )
         
         # Import all models to ensure they're registered
-        from . import models  # noqa
+        from ..models import Report, Finding, ProcessingQueue  # noqa
         
         # Create all tables
         async with _engine.begin() as conn:
@@ -157,8 +157,9 @@ async def get_session() -> AsyncGenerator[AsyncSession, None]:
 @asynccontextmanager
 async def get_db_context():
     """Context manager for database operations outside of FastAPI."""
-    async with get_session() as session:
+    async for session in get_session():
         yield session
+        break
 
 
 async def check_database_health() -> dict:
@@ -166,19 +167,22 @@ async def check_database_health() -> dict:
     try:
         async with get_db_context() as session:
             # Simple query to check connection
-            result = await session.execute("SELECT 1")
+            result = await session.execute(text("SELECT 1"))
             result.scalar()
         
         # Get pool status if available
         pool_status = {}
-        if _engine and hasattr(_engine.pool, "status"):
-            pool_status = {
-                "size": _engine.pool.size(),
-                "checked_in": _engine.pool.checkedin(),
-                "checked_out": _engine.pool.checkedout(),
-                "overflow": _engine.pool.overflow(),
-                "total": _engine.pool.total(),
-            }
+        if _engine and hasattr(_engine, "pool"):
+            try:
+                pool_status = {
+                    "size": getattr(_engine.pool, "size", lambda: 0)(),
+                    "checked_in": getattr(_engine.pool, "checkedin", lambda: 0)(),
+                    "checked_out": getattr(_engine.pool, "checkedout", lambda: 0)(),
+                    "overflow": getattr(_engine.pool, "overflow", lambda: 0)(),
+                }
+            except:
+                # Pool status not available for this engine type
+                pass
         
         return {
             "status": "healthy",
@@ -332,3 +336,4 @@ __all__ = [
     "check_database_health",
     "DatabaseManager",
 ]
+# Models will be imported in init_db() to avoid circular imports

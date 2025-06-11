@@ -9,7 +9,8 @@ from pathlib import Path
 from typing import Optional, List, Dict, Any
 from functools import lru_cache
 
-from pydantic import BaseSettings, Field, validator, SecretStr
+from pydantic import Field, field_validator, SecretStr
+from pydantic_settings import BaseSettings
 from pydantic.networks import AnyHttpUrl
 
 
@@ -20,7 +21,7 @@ class Settings(BaseSettings):
     APP_NAME: str = "Scanalyzer"
     APP_VERSION: str = "1.0.0"
     DEBUG: bool = Field(default=False, env="DEBUG")
-    ENVIRONMENT: str = Field(default="production", regex="^(development|staging|production)$")
+    ENVIRONMENT: str = Field(default="production", pattern="^(development|staging|production)$")
     
     # API
     API_V1_PREFIX: str = "/api/v1"
@@ -48,7 +49,8 @@ class Settings(BaseSettings):
     # Paths - Platform specific
     BASE_DIR: Path = Field(default_factory=lambda: Path(__file__).resolve().parent.parent.parent)
     
-    @validator("BASE_DIR", pre=True)
+    @field_validator("BASE_DIR", mode="before")
+    @classmethod
     def validate_base_dir(cls, v):
         """Ensure base directory exists."""
         path = Path(v) if v else Path(__file__).resolve().parent.parent.parent
@@ -142,8 +144,8 @@ class Settings(BaseSettings):
     MEMORY_CHECK_INTERVAL: int = Field(default=60, ge=10)  # Check every minute
     
     # Logging
-    LOG_LEVEL: str = Field(default="INFO", regex="^(DEBUG|INFO|WARNING|ERROR|CRITICAL)$")
-    LOG_FORMAT: str = Field(default="json", regex="^(json|plain)$")
+    LOG_LEVEL: str = Field(default="INFO", pattern="^(DEBUG|INFO|WARNING|ERROR|CRITICAL)$")
+    LOG_FORMAT: str = Field(default="json", pattern="^(json|plain)$")
     LOG_MAX_SIZE_MB: int = Field(default=100, ge=10)
     LOG_BACKUP_COUNT: int = Field(default=5, ge=1)
     LOG_INCLUDE_CONTEXT: bool = Field(default=True)
@@ -184,13 +186,15 @@ class Settings(BaseSettings):
         }
     )
     
-    class Config:
-        """Pydantic configuration."""
-        env_file = ".env"
-        env_file_encoding = "utf-8"
-        case_sensitive = True
+    model_config = {
+        "env_file": ".env",
+        "env_file_encoding": "utf-8",
+        "case_sensitive": True,
+        "extra": "ignore"
+    }
         
-    @validator("SECRET_KEY", pre=True)
+    @field_validator("SECRET_KEY", mode="before")
+    @classmethod
     def validate_secret_key(cls, v):
         """Ensure secret key is set and strong enough."""
         if not v:
@@ -199,7 +203,8 @@ class Settings(BaseSettings):
             raise ValueError("SECRET_KEY must be at least 32 characters long")
         return v
     
-    @validator("CORS_ORIGINS", pre=True)
+    @field_validator("CORS_ORIGINS", mode="before")
+    @classmethod
     def parse_cors_origins(cls, v):
         """Parse CORS origins from comma-separated string or list."""
         if isinstance(v, str):
