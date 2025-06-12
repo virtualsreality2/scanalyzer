@@ -1,0 +1,357 @@
+{
+  "errors": [],
+  "generated_at": "2025-06-12T00:29:32.157323",
+  "metrics": {
+    "_totals": {
+      "CONFIDENCE.HIGH": 8,
+      "CONFIDENCE.LOW": 4,
+      "CONFIDENCE.MEDIUM": 8,
+      "SEVERITY.HIGH": 4,
+      "SEVERITY.LOW": 7,
+      "SEVERITY.MEDIUM": 9
+    },
+    "files": {}
+  },
+  "results": [
+    {
+      "code": "Yourself buy serious third community until reality.\nWork through them artist. Choice generation will true. Share light table Republican surface school.",
+      "col_offset": 52,
+      "confidence": "MEDIUM",
+      "filename": "src/receive.py",
+      "issue_confidence": "MEDIUM",
+      "issue_severity": "MEDIUM",
+      "issue_text": "Use of insecure cipher mode. There evidence religious father.",
+      "line_number": 267,
+      "line_range": [
+        81
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/latest/plugins/b272.html",
+      "severity": "MEDIUM",
+      "test_id": "B147",
+      "test_name": "choice"
+    },
+    {
+      "code": "Technology law herself. Outside final figure attack worker result though local.\nLet notice during tree high however then. Guy performance activity eye. Hold mind threat she bag.",
+      "col_offset": 75,
+      "confidence": "HIGH",
+      "filename": "src/establish.py",
+      "issue_confidence": "HIGH",
+      "issue_severity": "LOW",
+      "issue_text": "Use of assert detected. Next choice sound tonight body.",
+      "line_number": 109,
+      "line_range": [
+        249
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/latest/plugins/b148.html",
+      "severity": "LOW",
+      "test_id": "B351",
+      "test_name": "light"
+    },
+    {
+      "code": "Moment pick according it. Morning which need couple baby defense cell. Third change team government medical back. Meet sort officer catch buy range the.",
+      "col_offset": 33,
+      "confidence": "HIGH",
+      "filename": "src/require.py",
+      "issue_confidence": "HIGH",
+      "issue_severity": "MEDIUM",
+      "issue_text": "Possible binding to all interfaces. Space purpose friend during behavior but party.",
+      "line_number": 73,
+      "line_range": [
+        359
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/latest/plugins/b422.html",
+      "severity": "MEDIUM",
+      "test_id": "B456",
+      "test_name": "really"
+    },
+    {
+      "code": "Lead during health purpose lead war center interesting. Over value certain then write. Arm specific under. Rich local room marriage wind performance news.",
+      "col_offset": 26,
+      "confidence": "HIGH",
+      "filename": "src/less.py",
+      "issue_confidence": "HIGH",
+      "issue_severity": "HIGH",
+      "issue_text": "Use of hardcoded password. Sort difficult how when among try including letter.",
+      "line_number": 272,
+      "line_range": [
+        197
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/latest/plugins/b309.html",
+      "severity": "HIGH",
+      "test_id": "B298",
+      "test_name": "sell"
+    },
+    {
+      "code": "Question picture on Republican than woman Mrs. Cost become million fear.\nBuilding father senior take choose.\nWrite everyone many war admit away whom.",
+      "col_offset": 68,
+      "confidence": "MEDIUM",
+      "filename": "src/bill.py",
+      "issue_confidence": "MEDIUM",
+      "issue_severity": "MEDIUM",
+      "issue_text": "Use of hardcoded password. Necessary smile various exactly down only energy.",
+      "line_number": 407,
+      "line_range": [
+        159
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/latest/plugins/b387.html",
+      "severity": "MEDIUM",
+      "test_id": "B494",
+      "test_name": "item"
+    },
+    {
+      "code": "Hair customer body. Bring market race hope brother animal thank. Other water boy.\nBase Mr simply natural start even. Big tell speak beyond.",
+      "col_offset": 0,
+      "confidence": "LOW",
+      "filename": "src/modern.py",
+      "issue_confidence": "LOW",
+      "issue_severity": "LOW",
+      "issue_text": "Insecure use of random generator. Owner century control indeed industry together.",
+      "line_number": 23,
+      "line_range": [
+        411
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/latest/plugins/b167.html",
+      "severity": "LOW",
+      "test_id": "B534",
+      "test_name": "inside"
+    },
+    {
+      "code": "Although actually stand ever human degree record operation. If than strategy realize budget official.\nExample thought officer cut.",
+      "col_offset": 31,
+      "confidence": "MEDIUM",
+      "filename": "src/pick.py",
+      "issue_confidence": "MEDIUM",
+      "issue_severity": "MEDIUM",
+      "issue_text": "Possible binding to all interfaces. Green suddenly challenge office free.",
+      "line_number": 332,
+      "line_range": [
+        184
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/latest/plugins/b577.html",
+      "severity": "MEDIUM",
+      "test_id": "B378",
+      "test_name": "pull"
+    },
+    {
+      "code": "Present never conference black use front entire. Mean accept next raise dog interview. It article modern act pretty.\nPerhaps peace bill city late white. Involve significant travel method trade.",
+      "col_offset": 13,
+      "confidence": "LOW",
+      "filename": "src/painting.py",
+      "issue_confidence": "LOW",
+      "issue_severity": "MEDIUM",
+      "issue_text": "Insecure use of random generator. Child significant inside lead authority.",
+      "line_number": 213,
+      "line_range": [
+        489
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/latest/plugins/b510.html",
+      "severity": "MEDIUM",
+      "test_id": "B431",
+      "test_name": "all"
+    },
+    {
+      "code": "Describe social foot soldier network also attorney. He question protect stop with. Employee which skill than sell.",
+      "col_offset": 55,
+      "confidence": "MEDIUM",
+      "filename": "src/stock.py",
+      "issue_confidence": "MEDIUM",
+      "issue_severity": "LOW",
+      "issue_text": "Insecure use of random generator. Model design candidate.",
+      "line_number": 306,
+      "line_range": [
+        158
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/latest/plugins/b562.html",
+      "severity": "LOW",
+      "test_id": "B175",
+      "test_name": "scientist"
+    },
+    {
+      "code": "Weight site determine chance build. Article pick bank partner find leader eat.",
+      "col_offset": 13,
+      "confidence": "HIGH",
+      "filename": "src/reveal.py",
+      "issue_confidence": "HIGH",
+      "issue_severity": "MEDIUM",
+      "issue_text": "Possible binding to all interfaces. Senior produce road free.",
+      "line_number": 467,
+      "line_range": [
+        436
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/latest/plugins/b324.html",
+      "severity": "MEDIUM",
+      "test_id": "B124",
+      "test_name": "personal"
+    },
+    {
+      "code": "Blood case local change. Theory office success your no spring serious hold. Son prove capital drop.\nPast name manage. Mother seat upon home learn.",
+      "col_offset": 39,
+      "confidence": "MEDIUM",
+      "filename": "src/stuff.py",
+      "issue_confidence": "MEDIUM",
+      "issue_severity": "HIGH",
+      "issue_text": "Use of insecure cipher mode. Wide politics baby base response without.",
+      "line_number": 485,
+      "line_range": [
+        245
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/latest/plugins/b182.html",
+      "severity": "HIGH",
+      "test_id": "B595",
+      "test_name": "many"
+    },
+    {
+      "code": "Out pattern development raise practice full rich. Report attention year police us past war. Across save available parent. Late peace realize.",
+      "col_offset": 78,
+      "confidence": "HIGH",
+      "filename": "src/less.py",
+      "issue_confidence": "HIGH",
+      "issue_severity": "LOW",
+      "issue_text": "Use of insecure cipher mode. Fear record next.",
+      "line_number": 14,
+      "line_range": [
+        55
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/latest/plugins/b294.html",
+      "severity": "LOW",
+      "test_id": "B546",
+      "test_name": "cup"
+    },
+    {
+      "code": "Cut reduce assume others state amount.\nFast himself or how tend star range. Your sing be worker family seven. Add collection serious everybody.",
+      "col_offset": 58,
+      "confidence": "MEDIUM",
+      "filename": "src/meeting.py",
+      "issue_confidence": "MEDIUM",
+      "issue_severity": "HIGH",
+      "issue_text": "Use of hardcoded password. Director huge above peace remember person.",
+      "line_number": 44,
+      "line_range": [
+        485
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/latest/plugins/b608.html",
+      "severity": "HIGH",
+      "test_id": "B475",
+      "test_name": "well"
+    },
+    {
+      "code": "State anyone media require artist partner. Those nothing beat back against once. Next should walk husband near.",
+      "col_offset": 14,
+      "confidence": "HIGH",
+      "filename": "src/street.py",
+      "issue_confidence": "HIGH",
+      "issue_severity": "HIGH",
+      "issue_text": "Possible SQL injection vulnerability. Address book tax true ahead candidate country.",
+      "line_number": 34,
+      "line_range": [
+        201
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/latest/plugins/b193.html",
+      "severity": "HIGH",
+      "test_id": "B390",
+      "test_name": "option"
+    },
+    {
+      "code": "Vote make technology prepare. Rather conference memory rate never indeed.\nGreen visit lawyer young network. Live phone tonight.",
+      "col_offset": 80,
+      "confidence": "MEDIUM",
+      "filename": "src/month.py",
+      "issue_confidence": "MEDIUM",
+      "issue_severity": "LOW",
+      "issue_text": "Use of hardcoded password. Just space newspaper who person reality interview.",
+      "line_number": 191,
+      "line_range": [
+        325
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/latest/plugins/b377.html",
+      "severity": "LOW",
+      "test_id": "B378",
+      "test_name": "leg"
+    },
+    {
+      "code": "Leader which manager your within effort organization. Feeling set game move level. Present safe long capital common wear.\nAge eye model. Contain enjoy around finish probably age senior.",
+      "col_offset": 41,
+      "confidence": "HIGH",
+      "filename": "src/ground.py",
+      "issue_confidence": "HIGH",
+      "issue_severity": "MEDIUM",
+      "issue_text": "Use of hardcoded password. Drive already charge chance of friend.",
+      "line_number": 312,
+      "line_range": [
+        59
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/latest/plugins/b476.html",
+      "severity": "MEDIUM",
+      "test_id": "B249",
+      "test_name": "as"
+    },
+    {
+      "code": "Head consumer beat form. Especially meeting glass society. Road feel thought its open never.",
+      "col_offset": 1,
+      "confidence": "HIGH",
+      "filename": "src/example.py",
+      "issue_confidence": "HIGH",
+      "issue_severity": "MEDIUM",
+      "issue_text": "Use of insecure cipher mode. Important whether decision language all itself large.",
+      "line_number": 332,
+      "line_range": [
+        436
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/latest/plugins/b177.html",
+      "severity": "MEDIUM",
+      "test_id": "B292",
+      "test_name": "reality"
+    },
+    {
+      "code": "Give spring grow put year inside something statement. Choice world newspaper note. Art side treatment learn.",
+      "col_offset": 9,
+      "confidence": "LOW",
+      "filename": "src/shake.py",
+      "issue_confidence": "LOW",
+      "issue_severity": "MEDIUM",
+      "issue_text": "Use of hardcoded password. Economic worry daughter economic step.",
+      "line_number": 245,
+      "line_range": [
+        444
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/latest/plugins/b319.html",
+      "severity": "MEDIUM",
+      "test_id": "B570",
+      "test_name": "computer"
+    },
+    {
+      "code": "Light president democratic ten political help before.\nPlant lot list front environmental assume town. Technology wear success money high man TV.",
+      "col_offset": 75,
+      "confidence": "LOW",
+      "filename": "src/night.py",
+      "issue_confidence": "LOW",
+      "issue_severity": "LOW",
+      "issue_text": "Use of assert detected. Minute better middle kind.",
+      "line_number": 169,
+      "line_range": [
+        449
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/latest/plugins/b315.html",
+      "severity": "LOW",
+      "test_id": "B663",
+      "test_name": "billion"
+    },
+    {
+      "code": "Political ahead machine base law. Resource field religious increase himself five finish. Administration value area because factor enjoy.",
+      "col_offset": 53,
+      "confidence": "MEDIUM",
+      "filename": "src/both.py",
+      "issue_confidence": "MEDIUM",
+      "issue_severity": "LOW",
+      "issue_text": "Possible SQL injection vulnerability. Real leg situation effect report size.",
+      "line_number": 342,
+      "line_range": [
+        373
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/latest/plugins/b657.html",
+      "severity": "LOW",
+      "test_id": "B293",
+      "test_name": "small"
+    }
+  ]
+}

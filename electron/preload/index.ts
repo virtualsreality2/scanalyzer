@@ -96,6 +96,13 @@ const storageAPI = {
   clear: () => ipcRenderer.invoke('storage:clear'),
 };
 
+// Error reporting API
+const errorReportingAPI = {
+  logError: (error: any) => ipcRenderer.invoke('error:log', error),
+  logWarning: (warning: string) => ipcRenderer.invoke('error:warning', warning),
+  sendCrashReport: (report: any) => ipcRenderer.invoke('error:crashReport', report),
+};
+
 // Test API (only in test/development mode)
 const testAPI = process.env.NODE_ENV === 'test' || process.env.SPECTRON === 'true' ? {
   shutdown: () => ipcRenderer.invoke('test:shutdown'),
@@ -122,6 +129,9 @@ contextBridge.exposeInMainWorld('electronAPI', {
   storage: storageAPI,
   ...(testAPI && { test: testAPI }),
 });
+
+// Expose error reporting separately to match the expected interface
+contextBridge.exposeInMainWorld('errorReporting', errorReportingAPI);
 
 // Type definitions for TypeScript
 export interface ElectronAPI {

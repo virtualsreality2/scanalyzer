@@ -48,17 +48,18 @@
     "npm": ">=9.0.0"
   },
   "devDependencies": {
+    "@percy/cli": "^1.30.11",
     "@types/node": "^20.10.0",
+    "concurrently": "^8.2.2",
     "electron": "^28.0.0",
     "electron-builder": "^24.9.1",
     "rimraf": "^5.0.5",
-    "typescript": "^5.3.3",
-    "concurrently": "^8.2.2"
+    "typescript": "^5.3.3"
   },
   "dependencies": {
     "electron-log": "^5.0.1",
-    "electron-updater": "^6.1.7",
-    "electron-store": "^8.1.0"
+    "electron-store": "^8.1.0",
+    "electron-updater": "^6.1.7"
   },
   "build": {
     "appId": "io.scanalyzer.app",
@@ -85,7 +86,10 @@
       "target": [
         {
           "target": "dmg",
-          "arch": ["x64", "arm64"]
+          "arch": [
+            "x64",
+            "arm64"
+          ]
         }
       ],
       "hardenedRuntime": true,
@@ -97,7 +101,9 @@
       "target": [
         {
           "target": "nsis",
-          "arch": ["x64"]
+          "arch": [
+            "x64"
+          ]
         }
       ],
       "icon": "electron/resources/icons/icon.ico"

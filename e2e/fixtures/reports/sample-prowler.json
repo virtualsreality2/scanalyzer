@@ -1,0 +1,783 @@
+{
+  "findings": [
+    {
+      "assessment_start_time": "2025-06-11T23:29:32.157945",
+      "finding_info": {
+        "finding_id": "12eb21fa-005a-440b-a2fe-7f160ecb62ce",
+        "check_id": "iam_consider_parent",
+        "check_title": "There especially college record.",
+        "check_type": "Security Best Practices",
+        "status": "INFO",
+        "status_extended": "Resource compliant",
+        "service_name": "lambda",
+        "risk": "",
+        "remediation": {
+          "recommendation": {
+            "text": "Question staff modern five maintain be. Hand doctor best key impact director.",
+            "url": "https://docs.aws.amazon.com/camera/ability"
+          }
+        }
+      },
+      "resources": {
+        "resource_id": "arn:aws:ec2:us-east-1:123456789012:especially/for",
+        "resource_arn": "arn:aws:s3:us-east-1:123456789012:form/week",
+        "resource_details": "Bad news question present short.",
+        "resource_tags": {
+          "Environment": "staging",
+          "Owner": "Destiny Wilson"
+        },
+        "region": "us-west-2",
+        "account_id": "123456789012"
+      },
+      "severity": "low"
+    },
+    {
+      "assessment_start_time": "2025-06-11T23:29:32.158095",
+      "finding_info": {
+        "finding_id": "0a7d0bb1-3e29-42de-8acc-dea52a7f37f8",
+        "check_id": "iam_such_break",
+        "check_title": "Tough indicate Republican project.",
+        "check_type": "Security Best Practices",
+        "status": "PASS",
+        "status_extended": "Resource compliant",
+        "service_name": "lambda",
+        "risk": "",
+        "remediation": {
+          "recommendation": {
+            "text": "Scene recent rather. Call per north school he.",
+            "url": "https://docs.aws.amazon.com/find/citizen"
+          }
+        }
+      },
+      "resources": {
+        "resource_id": "arn:aws:ec2:us-east-1:123456789012:little/method",
+        "resource_arn": "arn:aws:iam:us-east-1:123456789012:artist/project",
+        "resource_details": "Nothing produce hospital letter over real leg.",
+        "resource_tags": {
+          "Environment": "prod",
+          "Owner": "David Moses"
+        },
+        "region": "eu-west-1",
+        "account_id": "123456789012"
+      },
+      "severity": "informational"
+    },
+    {
+      "assessment_start_time": "2025-06-11T23:29:32.158216",
+      "finding_info": {
+        "finding_id": "848ee3c1-db40-486f-a03d-cd4045ce37ac",
+        "check_id": "rds_management_hit",
+        "check_title": "Memory half figure once series artist process.",
+        "check_type": "Security Best Practices",
+        "status": "PASS",
+        "status_extended": "Resource compliant",
+        "service_name": "s3",
+        "risk": "",
+        "remediation": {
+          "recommendation": {
+            "text": "Imagine product accept military country edge. Attack house bag skill protect go finally.",
+            "url": "https://docs.aws.amazon.com/hot/year"
+          }
+        }
+      },
+      "resources": {
+        "resource_id": "arn:aws:s3:us-east-1:123456789012:affect/yes",
+        "resource_arn": "arn:aws:iam:us-east-1:123456789012:plant/TV",
+        "resource_details": "Value since interview together.",
+        "resource_tags": {
+          "Environment": "dev",
+          "Owner": "Jill Singh"
+        },
+        "region": "us-west-2",
+        "account_id": "123456789012"
+      },
+      "severity": "critical"
+    },
+    {
+      "assessment_start_time": "2025-06-11T23:29:32.158326",
+      "finding_info": {
+        "finding_id": "157bde98-4314-4b10-800b-cb42b167beae",
+        "check_id": "ec2_relate_this",
+        "check_title": "Be skin together other expert.",
+        "check_type": "Security Best Practices",
+        "status": "PASS",
+        "status_extended": "Resource compliant",
+        "service_name": "iam",
+        "risk": "",
+        "remediation": {
+          "recommendation": {
+            "text": "Product reduce raise develop. Whole left record kind guy direction institution.",
+            "url": "https://docs.aws.amazon.com/plan/protect"
+          }
+        }
+      },
+      "resources": {
+        "resource_id": "arn:aws:s3:us-east-1:123456789012:board/much",
+        "resource_arn": "arn:aws:s3:us-east-1:123456789012:although/prepare",
+        "resource_details": "Off activity word seven similar voice knowledge.",
+        "resource_tags": {
+          "Environment": "prod",
+          "Owner": "Dr. John Hunt"
+        },
+        "region": "eu-west-1",
+        "account_id": "123456789012"
+      },
+      "severity": "critical"
+    },
+    {
+      "assessment_start_time": "2025-06-11T23:29:32.158447",
+      "finding_info": {
+        "finding_id": "dd07dfd5-821a-4f10-9a8f-f7297203cb7d",
+        "check_id": "s3_mean_cause",
+        "check_title": "Light whatever house sing.",
+        "check_type": "Security Best Practices",
+        "status": "PASS",
+        "status_extended": "Resource compliant",
+        "service_name": "ec2",
+        "risk": "",
+        "remediation": {
+          "recommendation": {
+            "text": "Figure little time each billion view short.",
+            "url": "https://docs.aws.amazon.com/part/production"
+          }
+        }
+      },
+      "resources": {
+        "resource_id": "arn:aws:ec2:us-east-1:123456789012:industry/skin",
+        "resource_arn": "arn:aws:s3:us-east-1:123456789012:exist/argue",
+        "resource_details": "Full blood plant film senior maintain.",
+        "resource_tags": {
+          "Environment": "staging",
+          "Owner": "William Hicks"
+        },
+        "region": "eu-west-1",
+        "account_id": "123456789012"
+      },
+      "severity": "high"
+    },
+    {
+      "assessment_start_time": "2025-06-11T23:29:32.158553",
+      "finding_info": {
+        "finding_id": "55b40f56-fb48-415c-a14a-49125e73fe53",
+        "check_id": "iam_huge_two",
+        "check_title": "One two until so.",
+        "check_type": "Security Best Practices",
+        "status": "INFO",
+        "status_extended": "Resource compliant",
+        "service_name": "s3",
+        "risk": "",
+        "remediation": {
+          "recommendation": {
+            "text": "Less marriage every beyond whether stand employee. Attorney half organization goal.",
+            "url": "https://docs.aws.amazon.com/enjoy/other"
+          }
+        }
+      },
+      "resources": {
+        "resource_id": "arn:aws:ec2:us-east-1:123456789012:month/arm",
+        "resource_arn": "arn:aws:s3:us-east-1:123456789012:practice/plan",
+        "resource_details": "Argue win sure role change paper.",
+        "resource_tags": {
+          "Environment": "dev",
+          "Owner": "Christopher Benson"
+        },
+        "region": "us-east-1",
+        "account_id": "123456789012"
+      },
+      "severity": "medium"
+    },
+    {
+      "assessment_start_time": "2025-06-11T23:29:32.158658",
+      "finding_info": {
+        "finding_id": "7a58d16d-06e8-485e-86da-45ef960dbf37",
+        "check_id": "ec2_church_bad",
+        "check_title": "All arrive mission rule upon.",
+        "check_type": "Security Best Practices",
+        "status": "INFO",
+        "status_extended": "Resource compliant",
+        "service_name": "rds",
+        "risk": "",
+        "remediation": {
+          "recommendation": {
+            "text": "Read family near forget have community foot never. Leg as return power suggest item allow. None about its by.",
+            "url": "https://docs.aws.amazon.com/couple/from"
+          }
+        }
+      },
+      "resources": {
+        "resource_id": "arn:aws:iam:us-east-1:123456789012:ago/respond",
+        "resource_arn": "arn:aws:ec2:us-east-1:123456789012:bad/might",
+        "resource_details": "After but drug much try address.",
+        "resource_tags": {
+          "Environment": "prod",
+          "Owner": "Albert Stark"
+        },
+        "region": "eu-west-1",
+        "account_id": "123456789012"
+      },
+      "severity": "low"
+    },
+    {
+      "assessment_start_time": "2025-06-11T23:29:32.158767",
+      "finding_info": {
+        "finding_id": "8343e765-deb7-496e-8841-1f3a088df15d",
+        "check_id": "rds_card_or",
+        "check_title": "Strong article country personal.",
+        "check_type": "Security Best Practices",
+        "status": "PASS",
+        "status_extended": "Resource compliant",
+        "service_name": "iam",
+        "risk": "",
+        "remediation": {
+          "recommendation": {
+            "text": "Send fire mention sort during party front artist. Decide small with early fall.",
+            "url": "https://docs.aws.amazon.com/key/air"
+          }
+        }
+      },
+      "resources": {
+        "resource_id": "arn:aws:s3:us-east-1:123456789012:concern/brother",
+        "resource_arn": "arn:aws:ec2:us-east-1:123456789012:less/either",
+        "resource_details": "Eight consider rate than hot.",
+        "resource_tags": {
+          "Environment": "dev",
+          "Owner": "Laurie Collins"
+        },
+        "region": "us-west-2",
+        "account_id": "123456789012"
+      },
+      "severity": "low"
+    },
+    {
+      "assessment_start_time": "2025-06-11T23:29:32.158873",
+      "finding_info": {
+        "finding_id": "640041d4-f5aa-4b56-b551-42f500932009",
+        "check_id": "rds_next_matter",
+        "check_title": "Never career determine light risk.",
+        "check_type": "Security Best Practices",
+        "status": "INFO",
+        "status_extended": "Resource compliant",
+        "service_name": "lambda",
+        "risk": "",
+        "remediation": {
+          "recommendation": {
+            "text": "Wish yet popular.",
+            "url": "https://docs.aws.amazon.com/machine/list"
+          }
+        }
+      },
+      "resources": {
+        "resource_id": "arn:aws:iam:us-east-1:123456789012:day/certainly",
+        "resource_arn": "arn:aws:ec2:us-east-1:123456789012:thing/allow",
+        "resource_details": "Arm treat laugh protect.",
+        "resource_tags": {
+          "Environment": "prod",
+          "Owner": "Michael Jones"
+        },
+        "region": "eu-west-1",
+        "account_id": "123456789012"
+      },
+      "severity": "medium"
+    },
+    {
+      "assessment_start_time": "2025-06-11T23:29:32.159051",
+      "finding_info": {
+        "finding_id": "6be76ac1-e2b5-4700-825d-15bdb3f64571",
+        "check_id": "s3_million_easy",
+        "check_title": "Gun fall standard.",
+        "check_type": "Security Best Practices",
+        "status": "INFO",
+        "status_extended": "Resource compliant",
+        "service_name": "rds",
+        "risk": "",
+        "remediation": {
+          "recommendation": {
+            "text": "Firm ahead quickly store rise enjoy. Watch interview another mention.",
+            "url": "https://docs.aws.amazon.com/state/but"
+          }
+        }
+      },
+      "resources": {
+        "resource_id": "arn:aws:iam:us-east-1:123456789012:author/between",
+        "resource_arn": "arn:aws:iam:us-east-1:123456789012:another/when",
+        "resource_details": "Service consider century seem site.",
+        "resource_tags": {
+          "Environment": "prod",
+          "Owner": "Donna James"
+        },
+        "region": "us-east-1",
+        "account_id": "123456789012"
+      },
+      "severity": "high"
+    },
+    {
+      "assessment_start_time": "2025-06-11T23:29:32.159164",
+      "finding_info": {
+        "finding_id": "f5124fbd-3087-4a6a-a335-c861177a89aa",
+        "check_id": "iam_power_skill",
+        "check_title": "Sound join Mrs exist watch summer choice.",
+        "check_type": "Security Best Practices",
+        "status": "INFO",
+        "status_extended": "Resource compliant",
+        "service_name": "s3",
+        "risk": "",
+        "remediation": {
+          "recommendation": {
+            "text": "Fund up sound manager. Which she run past how yes though. Little student order music itself college.",
+            "url": "https://docs.aws.amazon.com/paper/administration"
+          }
+        }
+      },
+      "resources": {
+        "resource_id": "arn:aws:ec2:us-east-1:123456789012:American/boy",
+        "resource_arn": "arn:aws:ec2:us-east-1:123456789012:ago/long",
+        "resource_details": "Serious talk structure morning surface ever.",
+        "resource_tags": {
+          "Environment": "prod",
+          "Owner": "Richard Johnson"
+        },
+        "region": "eu-west-1",
+        "account_id": "123456789012"
+      },
+      "severity": "critical"
+    },
+    {
+      "assessment_start_time": "2025-06-11T23:29:32.159278",
+      "finding_info": {
+        "finding_id": "8cad0119-9b0e-4409-9bcc-dcc982287437",
+        "check_id": "s3_you_poor",
+        "check_title": "Perform onto really boy night.",
+        "check_type": "Security Best Practices",
+        "status": "PASS",
+        "status_extended": "Resource compliant",
+        "service_name": "lambda",
+        "risk": "",
+        "remediation": {
+          "recommendation": {
+            "text": "Language require military race church city key.",
+            "url": "https://docs.aws.amazon.com/similar/pick"
+          }
+        }
+      },
+      "resources": {
+        "resource_id": "arn:aws:iam:us-east-1:123456789012:wind/help",
+        "resource_arn": "arn:aws:ec2:us-east-1:123456789012:reach/buy",
+        "resource_details": "Interview use lose term blood where court.",
+        "resource_tags": {
+          "Environment": "dev",
+          "Owner": "Elizabeth Moore"
+        },
+        "region": "us-west-2",
+        "account_id": "123456789012"
+      },
+      "severity": "medium"
+    },
+    {
+      "assessment_start_time": "2025-06-11T23:29:32.159379",
+      "finding_info": {
+        "finding_id": "15a76417-4ec8-46b1-a191-3be1954cc8f0",
+        "check_id": "rds_recognize_spend",
+        "check_title": "Operation goal cup drop after computer.",
+        "check_type": "Security Best Practices",
+        "status": "FAIL",
+        "status_extended": "Level notice why fast up.",
+        "service_name": "lambda",
+        "risk": "Image pass rest north else year radio. Partner this meeting law give environment. Maintain together military party.",
+        "remediation": {
+          "recommendation": {
+            "text": "Surface these real election quickly. Material meet play still. Phone page degree full I.",
+            "url": "https://docs.aws.amazon.com/never/ahead"
+          }
+        }
+      },
+      "resources": {
+        "resource_id": "arn:aws:ec2:us-east-1:123456789012:travel/hour",
+        "resource_arn": "arn:aws:s3:us-east-1:123456789012:west/later",
+        "resource_details": "Goal begin claim enough rise lead future.",
+        "resource_tags": {
+          "Environment": "staging",
+          "Owner": "Patricia Jordan"
+        },
+        "region": "us-east-1",
+        "account_id": "123456789012"
+      },
+      "severity": "informational"
+    },
+    {
+      "assessment_start_time": "2025-06-11T23:29:32.159509",
+      "finding_info": {
+        "finding_id": "73d879d5-b486-4327-82f5-0a19dcf4ee34",
+        "check_id": "rds_speech_catch",
+        "check_title": "Learn never soldier phone save fill manage improve.",
+        "check_type": "Security Best Practices",
+        "status": "FAIL",
+        "status_extended": "Enjoy mouth travel difficult per light.",
+        "service_name": "lambda",
+        "risk": "Center fly head point. Ground cold throughout. Field none art us adult set.",
+        "remediation": {
+          "recommendation": {
+            "text": "Shake according condition painting. Rest tax sound able. News Congress north.",
+            "url": "https://docs.aws.amazon.com/west/total"
+          }
+        }
+      },
+      "resources": {
+        "resource_id": "arn:aws:iam:us-east-1:123456789012:suffer/unit",
+        "resource_arn": "arn:aws:iam:us-east-1:123456789012:home/police",
+        "resource_details": "Owner street game rule close.",
+        "resource_tags": {
+          "Environment": "dev",
+          "Owner": "Deanna Houston"
+        },
+        "region": "eu-west-1",
+        "account_id": "123456789012"
+      },
+      "severity": "informational"
+    },
+    {
+      "assessment_start_time": "2025-06-11T23:29:32.159637",
+      "finding_info": {
+        "finding_id": "3aa71708-264c-4c4e-b6c5-8aba4d5cb619",
+        "check_id": "rds_beautiful_back",
+        "check_title": "Central prevent safe season already.",
+        "check_type": "Security Best Practices",
+        "status": "INFO",
+        "status_extended": "Resource compliant",
+        "service_name": "rds",
+        "risk": "",
+        "remediation": {
+          "recommendation": {
+            "text": "Indeed reach sport I during possible.",
+            "url": "https://docs.aws.amazon.com/soon/country"
+          }
+        }
+      },
+      "resources": {
+        "resource_id": "arn:aws:s3:us-east-1:123456789012:buy/democratic",
+        "resource_arn": "arn:aws:ec2:us-east-1:123456789012:mention/social",
+        "resource_details": "State human cultural PM.",
+        "resource_tags": {
+          "Environment": "dev",
+          "Owner": "Carla Ruiz"
+        },
+        "region": "eu-west-1",
+        "account_id": "123456789012"
+      },
+      "severity": "informational"
+    },
+    {
+      "assessment_start_time": "2025-06-11T23:29:32.159736",
+      "finding_info": {
+        "finding_id": "7b94dead-6473-4e23-9b92-3efa57dbcd2b",
+        "check_id": "rds_organization_though",
+        "check_title": "Level company family seem nice under couple.",
+        "check_type": "Security Best Practices",
+        "status": "FAIL",
+        "status_extended": "Spend culture alone.",
+        "service_name": "lambda",
+        "risk": "Knowledge home accept data decade new candidate. Tree nothing include. Stuff alone own child of.",
+        "remediation": {
+          "recommendation": {
+            "text": "Keep arm assume eye father bar suggest respond. Why job how apply fear stay. Against happy today our.",
+            "url": "https://docs.aws.amazon.com/hot/story"
+          }
+        }
+      },
+      "resources": {
+        "resource_id": "arn:aws:s3:us-east-1:123456789012:put/threat",
+        "resource_arn": "arn:aws:ec2:us-east-1:123456789012:seven/realize",
+        "resource_details": "Song yet price develop claim well.",
+        "resource_tags": {
+          "Environment": "prod",
+          "Owner": "Erica Roth"
+        },
+        "region": "eu-west-1",
+        "account_id": "123456789012"
+      },
+      "severity": "critical"
+    },
+    {
+      "assessment_start_time": "2025-06-11T23:29:32.159864",
+      "finding_info": {
+        "finding_id": "44ce34e0-5100-40d6-977b-1629be8f62ee",
+        "check_id": "s3_animal_because",
+        "check_title": "Will measure book.",
+        "check_type": "Security Best Practices",
+        "status": "INFO",
+        "status_extended": "Resource compliant",
+        "service_name": "iam",
+        "risk": "",
+        "remediation": {
+          "recommendation": {
+            "text": "Get full say group major. Long management green can hotel provide. Night nation leg land.",
+            "url": "https://docs.aws.amazon.com/draw/industry"
+          }
+        }
+      },
+      "resources": {
+        "resource_id": "arn:aws:ec2:us-east-1:123456789012:chair/a",
+        "resource_arn": "arn:aws:ec2:us-east-1:123456789012:quite/would",
+        "resource_details": "Leg future team condition often prepare.",
+        "resource_tags": {
+          "Environment": "prod",
+          "Owner": "Daniel Camacho"
+        },
+        "region": "us-west-2",
+        "account_id": "123456789012"
+      },
+      "severity": "medium"
+    },
+    {
+      "assessment_start_time": "2025-06-11T23:29:32.159973",
+      "finding_info": {
+        "finding_id": "1ba3d220-4848-498f-a589-ec99a7c4201d",
+        "check_id": "ec2_media_standard",
+        "check_title": "Kid wife prepare education.",
+        "check_type": "Security Best Practices",
+        "status": "INFO",
+        "status_extended": "Resource compliant",
+        "service_name": "iam",
+        "risk": "",
+        "remediation": {
+          "recommendation": {
+            "text": "Sort single else child compare all. Production but health lay service catch.",
+            "url": "https://docs.aws.amazon.com/local/couple"
+          }
+        }
+      },
+      "resources": {
+        "resource_id": "arn:aws:ec2:us-east-1:123456789012:television/shake",
+        "resource_arn": "arn:aws:iam:us-east-1:123456789012:hospital/while",
+        "resource_details": "Military spend project individual rule wide.",
+        "resource_tags": {
+          "Environment": "dev",
+          "Owner": "Danielle Kim"
+        },
+        "region": "us-east-1",
+        "account_id": "123456789012"
+      },
+      "severity": "critical"
+    },
+    {
+      "assessment_start_time": "2025-06-11T23:29:32.160077",
+      "finding_info": {
+        "finding_id": "93fb6e50-04b6-43cf-926e-c145dfae66bb",
+        "check_id": "s3_particularly_among",
+        "check_title": "Industry really future career car often.",
+        "check_type": "Security Best Practices",
+        "status": "PASS",
+        "status_extended": "Resource compliant",
+        "service_name": "iam",
+        "risk": "",
+        "remediation": {
+          "recommendation": {
+            "text": "Leg item political stock through anyone.",
+            "url": "https://docs.aws.amazon.com/top/close"
+          }
+        }
+      },
+      "resources": {
+        "resource_id": "arn:aws:iam:us-east-1:123456789012:recognize/several",
+        "resource_arn": "arn:aws:ec2:us-east-1:123456789012:wonder/yes",
+        "resource_details": "He also shoulder worry hundred less history.",
+        "resource_tags": {
+          "Environment": "dev",
+          "Owner": "Mikayla Jones"
+        },
+        "region": "us-west-2",
+        "account_id": "123456789012"
+      },
+      "severity": "informational"
+    },
+    {
+      "assessment_start_time": "2025-06-11T23:29:32.160175",
+      "finding_info": {
+        "finding_id": "e15ad53b-045d-45b6-aab3-ea04d6ff88c9",
+        "check_id": "ec2_to_candidate",
+        "check_title": "Mother fall ten sit other hair actually.",
+        "check_type": "Security Best Practices",
+        "status": "FAIL",
+        "status_extended": "Stop you stop.",
+        "service_name": "s3",
+        "risk": "Wife tough goal here energy. Explain sort stock left almost. Even carry her eat voice meeting scientist.",
+        "remediation": {
+          "recommendation": {
+            "text": "Deep amount image reduce various it conference. Hour seat receive hear.",
+            "url": "https://docs.aws.amazon.com/boy/painting"
+          }
+        }
+      },
+      "resources": {
+        "resource_id": "arn:aws:s3:us-east-1:123456789012:hear/middle",
+        "resource_arn": "arn:aws:iam:us-east-1:123456789012:evening/free",
+        "resource_details": "Least seek year trade involve occur.",
+        "resource_tags": {
+          "Environment": "dev",
+          "Owner": "Richard Lowery"
+        },
+        "region": "us-west-2",
+        "account_id": "123456789012"
+      },
+      "severity": "medium"
+    },
+    {
+      "assessment_start_time": "2025-06-11T23:29:32.160302",
+      "finding_info": {
+        "finding_id": "062f3458-c271-4ad9-9c3e-57837584da71",
+        "check_id": "rds_government_carry",
+        "check_title": "Some not compare age Mr any particularly despite.",
+        "check_type": "Security Best Practices",
+        "status": "PASS",
+        "status_extended": "Resource compliant",
+        "service_name": "s3",
+        "risk": "",
+        "remediation": {
+          "recommendation": {
+            "text": "Animal feeling clearly girl. Bill focus sound. Class carry add question now beautiful.",
+            "url": "https://docs.aws.amazon.com/job/whole"
+          }
+        }
+      },
+      "resources": {
+        "resource_id": "arn:aws:ec2:us-east-1:123456789012:budget/happy",
+        "resource_arn": "arn:aws:iam:us-east-1:123456789012:month/thousand",
+        "resource_details": "Else wish firm accept organization yourself already.",
+        "resource_tags": {
+          "Environment": "dev",
+          "Owner": "Mr. Jay Becker DDS"
+        },
+        "region": "us-west-2",
+        "account_id": "123456789012"
+      },
+      "severity": "medium"
+    },
+    {
+      "assessment_start_time": "2025-06-11T23:29:32.160419",
+      "finding_info": {
+        "finding_id": "124b043d-7323-4d4c-b2ee-1f8010904425",
+        "check_id": "iam_get_early",
+        "check_title": "Moment amount reason subject stage game hundred.",
+        "check_type": "Security Best Practices",
+        "status": "PASS",
+        "status_extended": "Resource compliant",
+        "service_name": "ec2",
+        "risk": "",
+        "remediation": {
+          "recommendation": {
+            "text": "Cup score his citizen article town. Course try majority top economy. Less go listen.",
+            "url": "https://docs.aws.amazon.com/current/wear"
+          }
+        }
+      },
+      "resources": {
+        "resource_id": "arn:aws:ec2:us-east-1:123456789012:age/southern",
+        "resource_arn": "arn:aws:ec2:us-east-1:123456789012:hard/year",
+        "resource_details": "Material size first cold again way surface.",
+        "resource_tags": {
+          "Environment": "dev",
+          "Owner": "Jack Wheeler"
+        },
+        "region": "eu-west-1",
+        "account_id": "123456789012"
+      },
+      "severity": "informational"
+    },
+    {
+      "assessment_start_time": "2025-06-11T23:29:32.160532",
+      "finding_info": {
+        "finding_id": "2d88e536-82af-496e-9d95-76b48b30c23a",
+        "check_id": "s3_research_because",
+        "check_title": "Business past rock sort learn sell.",
+        "check_type": "Security Best Practices",
+        "status": "FAIL",
+        "status_extended": "Model security should small mean four eat.",
+        "service_name": "lambda",
+        "risk": "Imagine hot where authority. There realize always.",
+        "remediation": {
+          "recommendation": {
+            "text": "Most good report around me. Cell woman which until color treat tree. Onto as dark garden idea want.",
+            "url": "https://docs.aws.amazon.com/piece/American"
+          }
+        }
+      },
+      "resources": {
+        "resource_id": "arn:aws:ec2:us-east-1:123456789012:woman/away",
+        "resource_arn": "arn:aws:s3:us-east-1:123456789012:record/size",
+        "resource_details": "Especially paper born position.",
+        "resource_tags": {
+          "Environment": "dev",
+          "Owner": "Brandon Stanton"
+        },
+        "region": "eu-west-1",
+        "account_id": "123456789012"
+      },
+      "severity": "high"
+    },
+    {
+      "assessment_start_time": "2025-06-11T23:29:32.160658",
+      "finding_info": {
+        "finding_id": "6cf51c18-39b4-4603-8e4a-10372f8cdecd",
+        "check_id": "s3_office_series",
+        "check_title": "Production guy catch dream chair interview.",
+        "check_type": "Security Best Practices",
+        "status": "INFO",
+        "status_extended": "Resource compliant",
+        "service_name": "s3",
+        "risk": "",
+        "remediation": {
+          "recommendation": {
+            "text": "Organization parent individual security.",
+            "url": "https://docs.aws.amazon.com/shoulder/power"
+          }
+        }
+      },
+      "resources": {
+        "resource_id": "arn:aws:iam:us-east-1:123456789012:enjoy/agreement",
+        "resource_arn": "arn:aws:s3:us-east-1:123456789012:top/difference",
+        "resource_details": "Decision between administration spend bar project various training.",
+        "resource_tags": {
+          "Environment": "prod",
+          "Owner": "Terrence Richardson"
+        },
+        "region": "us-west-2",
+        "account_id": "123456789012"
+      },
+      "severity": "low"
+    },
+    {
+      "assessment_start_time": "2025-06-11T23:29:32.160755",
+      "finding_info": {
+        "finding_id": "42fbbb8f-2918-4a6a-ad57-8dfef114b66d",
+        "check_id": "rds_item_any",
+        "check_title": "Be image we big assume vote.",
+        "check_type": "Security Best Practices",
+        "status": "PASS",
+        "status_extended": "Resource compliant",
+        "service_name": "ec2",
+        "risk": "",
+        "remediation": {
+          "recommendation": {
+            "text": "Two himself can certainly. Rise plan talk finally goal manage opportunity. Experience laugh student.",
+            "url": "https://docs.aws.amazon.com/short/almost"
+          }
+        }
+      },
+      "resources": {
+        "resource_id": "arn:aws:ec2:us-east-1:123456789012:stage/eat",
+        "resource_arn": "arn:aws:ec2:us-east-1:123456789012:mean/national",
+        "resource_details": "Number vote perform.",
+        "resource_tags": {
+          "Environment": "staging",
+          "Owner": "Alison Gonzales"
+        },
+        "region": "us-east-1",
+        "account_id": "123456789012"
+      },
+      "severity": "high"
+    }
+  ],
+  "metadata": {
+    "prowler_version": "3.0.0",
+    "timestamp": "2025-06-12T00:29:32.160861"
+  }
+}
