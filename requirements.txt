@@ -1,0 +1,52 @@
+# Scanalyzer Backend Requirements
+# Python 3.11+ required
+
+# Core Framework
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+
+# Data Validation & Settings
+pydantic==2.5.2
+pydantic-settings==2.1.0
+
+# Database
+sqlalchemy==2.0.23
+alembic==1.13.0
+sqlcipher3==0.5.2
+
+# Authentication & Security
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+
+# File Processing
+python-multipart==0.0.6
+aiofiles==23.2.1
+
+# Document Parsing
+pdfplumber==0.10.3
+python-docx==1.1.0
+openpyxl==3.1.2
+
+# Data Processing
+pandas==2.1.4
+numpy==1.26.2
+
+# System & Performance
+psutil==5.9.6
+memory-profiler==0.61.0
+
+# Background Tasks & Scheduling
+redis==5.0.1
+croniter==2.0.1
+watchdog==3.0.0
+
+# HTTP & Networking
+httpx==0.25.2
+
+# Utilities
+python-dotenv==1.0.0
+tenacity==8.2.3
+
+# Logging & Monitoring
+structlog==23.2.0
+prometheus-client==0.19.0
