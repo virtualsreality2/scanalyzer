@@ -1,5 +1,4 @@
 import { app, BrowserWindow, shell, protocol, crashReporter } from 'electron';
-import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
 import * as path from 'path';
 import { WindowManager } from './window';
@@ -7,6 +6,7 @@ import { setupIpcHandlers } from './ipc';
 import { createApplicationMenu } from './menu';
 import { BackendManager } from './backend';
 import { isDevelopment, isProduction } from './utils/env';
+import { getUpdater, createUpdateUI } from '../src/updater';
 
 // Get directory path
 const __dirname = path.dirname(__filename);
@@ -141,11 +141,24 @@ app.whenReady().then(async () => {
   }
   
   // Create main window
-  await windowManager.createMainWindow();
+  const mainWindow = await windowManager.createMainWindow();
   
   // Setup auto-updater
   if (isProduction()) {
-    autoUpdater.checkForUpdatesAndNotify();
+    const updater = getUpdater({
+      allowPrerelease: false,
+      allowDowngrade: false,
+      channel: 'latest'
+    });
+    
+    updater.setMainWindow(mainWindow);
+    createUpdateUI(mainWindow);
+    updater.startPeriodicChecks(4); // Check every 4 hours
+    
+    // Check for updates after 30 seconds
+    setTimeout(() => {
+      updater.checkForUpdatesInBackground();
+    }, 30000);
   }
 });
 

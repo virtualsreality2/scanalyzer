@@ -1,0 +1,287 @@
+name: Release Build
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+  workflow_dispatch:
+    inputs:
+      release_type:
+        description: 'Release type'
+        required: true
+        default: 'draft'
+        type: choice
+        options:
+          - draft
+          - prerelease
+          - release
+
+env:
+  NODE_VERSION: '18.x'
+  PYTHON_VERSION: '3.11'
+
+jobs:
+  prepare:
+    name: Prepare Release
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+      changelog: ${{ steps.changelog.outputs.changelog }}
+    
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      - name: Get version
+        id: version
+        run: |
+          if [[ "${GITHUB_REF}" == refs/tags/* ]]; then
+            VERSION=${GITHUB_REF#refs/tags/v}
+          else
+            VERSION=$(node -p "require('./package.json').version")
+          fi
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "📦 Version: $VERSION"
+          
+      - name: Generate changelog
+        id: changelog
+        run: |
+          npm install -g conventional-changelog-cli
+          conventional-changelog -p angular -i CHANGELOG.md -s -r 1 > release-notes.md
+          echo "changelog<<EOF" >> $GITHUB_OUTPUT
+          cat release-notes.md >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+          
+      - name: Upload changelog
+        uses: actions/upload-artifact@v3
+        with:
+          name: release-notes
+          path: release-notes.md
+
+  test:
+    name: Run Tests
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          
+      - name: Install dependencies
+        run: |
+          npm ci
+          cd backend && pip install -r requirements.txt && pip install -r requirements-dev.txt
+          
+      - name: Run backend tests
+        run: |
+          cd backend
+          python -m pytest --cov=app --cov-report=xml
+          
+      - name: Run frontend tests
+        run: |
+          cd frontend
+          npm run test -- --run
+          
+      - name: Run E2E tests
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          npx playwright install --with-deps chromium
+          npm run test:e2e -- --project=chromium
+
+  build:
+    name: Build Release
+    needs: [prepare, test]
+    runs-on: ${{ matrix.os }}
+    
+    strategy:
+      matrix:
+        include:
+          - os: windows-latest
+            platform: win
+            arch: x64
+            
+          - os: macos-latest
+            platform: mac
+            arch: x64
+            
+          - os: macos-latest
+            platform: mac
+            arch: arm64
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          
+      - name: Install dependencies
+        run: |
+          npm ci
+          cd backend && pip install -r requirements.txt
+          
+      - name: Build backend
+        run: |
+          cd backend
+          python -m build
+          
+      - name: Build frontend
+        run: |
+          cd frontend
+          npm run build
+          
+      - name: Prepare Electron
+        run: |
+          cd electron
+          npm ci
+          npm run build
+          
+      # Windows code signing
+      - name: Setup Windows certificate
+        if: matrix.platform == 'win'
+        shell: pwsh
+        run: |
+          $certificateBytes = [Convert]::FromBase64String("${{ secrets.WINDOWS_CERTIFICATE }}")
+          $certificatePath = Join-Path -Path $env:RUNNER_TEMP -ChildPath "certificate.pfx"
+          [IO.File]::WriteAllBytes($certificatePath, $certificateBytes)
+          echo "WINDOWS_CERTIFICATE_FILE=$certificatePath" >> $env:GITHUB_ENV
+          echo "WINDOWS_CERTIFICATE_PASSWORD=${{ secrets.WINDOWS_CERTIFICATE_PASSWORD }}" >> $env:GITHUB_ENV
+          
+      # macOS code signing
+      - name: Setup macOS certificate
+        if: matrix.platform == 'mac'
+        env:
+          MACOS_CERTIFICATE: ${{ secrets.MACOS_CERTIFICATE }}
+          MACOS_CERTIFICATE_PWD: ${{ secrets.MACOS_CERTIFICATE_PWD }}
+          KEYCHAIN_PWD: ${{ secrets.KEYCHAIN_PWD }}
+        run: |
+          # Create temporary keychain
+          KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
+          security create-keychain -p "$KEYCHAIN_PWD" $KEYCHAIN_PATH
+          security set-keychain-settings -lut 21600 $KEYCHAIN_PATH
+          security unlock-keychain -p "$KEYCHAIN_PWD" $KEYCHAIN_PATH
+          
+          # Import certificate
+          echo $MACOS_CERTIFICATE | base64 --decode > certificate.p12
+          security import certificate.p12 -k $KEYCHAIN_PATH -P "$MACOS_CERTIFICATE_PWD" -T /usr/bin/codesign
+          security list-keychain -d user -s $KEYCHAIN_PATH
+          security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k "$KEYCHAIN_PWD" $KEYCHAIN_PATH
+          
+          # Environment variables for electron-builder
+          echo "APPLE_ID=${{ secrets.APPLE_ID }}" >> $GITHUB_ENV
+          echo "APPLE_ID_PASSWORD=${{ secrets.APPLE_ID_PASSWORD }}" >> $GITHUB_ENV
+          echo "APPLE_TEAM_ID=${{ secrets.APPLE_TEAM_ID }}" >> $GITHUB_ENV
+          echo "APPLE_DEVELOPER_IDENTITY=${{ secrets.APPLE_DEVELOPER_IDENTITY }}" >> $GITHUB_ENV
+          
+      - name: Build Electron app
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USE_HARD_LINKS: false
+          PUBLISH_PROVIDER: github
+          GITHUB_OWNER: ${{ github.repository_owner }}
+          GITHUB_REPO: ${{ github.event.repository.name }}
+        run: |
+          cd electron
+          if [ "${{ matrix.platform }}" = "mac" ] && [ "${{ matrix.arch }}" = "arm64" ]; then
+            npm run dist -- --mac --arm64
+          elif [ "${{ matrix.platform }}" = "mac" ]; then
+            npm run dist -- --mac --x64
+          else
+            npm run dist -- --win --x64
+          fi
+          
+      - name: List build artifacts
+        run: |
+          echo "📦 Build artifacts:"
+          ls -la electron/dist/
+          
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ matrix.platform }}-${{ matrix.arch }}
+          path: |
+            electron/dist/*.exe
+            electron/dist/*.dmg
+            electron/dist/*.zip
+            electron/dist/*.blockmap
+            electron/dist/*.yml
+            electron/dist/*.AppImage
+            electron/dist/*.deb
+            electron/dist/*.rpm
+
+  release:
+    name: Create Release
+    needs: [prepare, build]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Download all artifacts
+        uses: actions/download-artifact@v3
+        with:
+          path: artifacts
+          
+      - name: Prepare release assets
+        run: |
+          mkdir -p release-assets
+          find artifacts -type f \( -name "*.exe" -o -name "*.dmg" -o -name "*.zip" -o -name "*.AppImage" -o -name "*.deb" -o -name "*.rpm" \) -exec cp {} release-assets/ \;
+          find artifacts -type f -name "*.yml" -exec cp {} release-assets/ \;
+          echo "📦 Release assets:"
+          ls -la release-assets/
+          
+      - name: Generate checksums
+        run: |
+          cd release-assets
+          sha256sum * > SHA256SUMS.txt
+          cd ..
+          
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ needs.prepare.outputs.version }}
+          name: Scanalyzer v${{ needs.prepare.outputs.version }}
+          body: ${{ needs.prepare.outputs.changelog }}
+          draft: ${{ github.event.inputs.release_type == 'draft' || github.event_name == 'workflow_dispatch' }}
+          prerelease: ${{ github.event.inputs.release_type == 'prerelease' }}
+          files: release-assets/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Update release server
+        if: github.event.inputs.release_type == 'release' || github.event_name == 'push'
+        run: |
+          if [ -n "${{ secrets.UPDATE_SERVER_WEBHOOK }}" ]; then
+            curl -X POST ${{ secrets.UPDATE_SERVER_WEBHOOK }} \
+              -H "Authorization: Bearer ${{ secrets.UPDATE_SERVER_TOKEN }}" \
+              -H "Content-Type: application/json" \
+              -d '{
+                "version": "${{ needs.prepare.outputs.version }}",
+                "platform": "all",
+                "channel": "stable"
+              }'
+          else
+            echo "⚠️  Update server webhook not configured"
+          fi
