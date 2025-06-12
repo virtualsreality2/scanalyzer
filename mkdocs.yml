@@ -1,0 +1,120 @@
+site_name: Scanalyzer Documentation
+site_description: Comprehensive security findings analysis platform
+site_author: Scanalyzer Team
+site_url: https://docs.scanalyzer.app
+repo_name: scanalyzer/scanalyzer
+repo_url: https://github.com/scanalyzer/scanalyzer
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  custom_dir: docs/overrides
+  favicon: images/favicon.ico
+  logo: images/logo.png
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+
+plugins:
+  - search
+  - minify:
+      minify_html: true
+  - git-revision-date-localized:
+      enable_creation_date: true
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.keys
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Installation: user-guide/getting-started/installation.md
+    - First Steps: user-guide/getting-started/first-steps.md
+    - Quick Start Tutorial: user-guide/getting-started/quickstart.md
+  - User Guide:
+    - Dashboard Overview: user-guide/features/dashboard.md
+    - Uploading Reports: user-guide/features/uploading-reports.md
+    - Analyzing Findings: user-guide/features/analyzing-findings.md
+    - Filtering and Search: user-guide/features/filtering.md
+    - Exporting Data: user-guide/features/exporting-data.md
+    - Keyboard Shortcuts: user-guide/features/keyboard-shortcuts.md
+  - Advanced Features:
+    - Bulk Operations: user-guide/advanced/bulk-operations.md
+    - Custom Categories: user-guide/advanced/custom-categories.md
+    - Report Templates: user-guide/advanced/report-templates.md
+    - Automation: user-guide/advanced/automation.md
+  - Integrations:
+    - Supported Tools: user-guide/integrations/supported-tools.md
+    - API Usage: api-reference/api-usage.md
+    - Webhooks: api-reference/webhooks.md
+  - Troubleshooting:
+    - Common Issues: user-guide/troubleshooting/common-issues.md
+    - Error Messages: user-guide/troubleshooting/error-messages.md
+    - Performance Tips: user-guide/troubleshooting/performance.md
+    - Debug Mode: user-guide/troubleshooting/debug-mode.md
+  - Developer Guide:
+    - Architecture: developer-guide/architecture.md
+    - Setup Guide: developer-guide/setup.md
+    - Contributing: developer-guide/contributing.md
+    - API Reference: api-reference/index.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/scanalyzer/scanalyzer
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/scanalyzer
+  analytics:
+    provider: google
+    property: G-XXXXXXXXXX
+  version:
+    provider: mike
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/extra.js
